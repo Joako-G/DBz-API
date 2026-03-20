@@ -1,0 +1,44 @@
+import { NavLink, useNavigate } from 'react-router-dom'
+import styles from './Header.module.css'
+import { useAuthStore } from '../store/useAuthStore'
+
+export function Header() {
+    const { token, logout } = useAuthStore()
+    const navigate = useNavigate()
+
+    const handleClickLogut = () => {
+        logout()
+        navigate('/')
+    }
+
+    return (
+        <header className={styles.container}>
+            <div className={styles.logo}>
+                <NavLink to='/'>
+                    Logo
+                </NavLink>
+            </div>
+            <nav className={styles.navLink}>
+                <NavLink className={({ isActive }) => isActive ? 'nav-link-active' : 'nav-link'} to={'/'}>
+                    Inicio
+                </NavLink>
+                <NavLink className={({ isActive }) => isActive ? 'nav-link-active' : 'nav-link'} to='/characters'>
+                    Personajes
+                </NavLink>
+                {
+                    token ? <NavLink className={({ isActive }) => isActive ? 'nav-link-active' : ''} to='/profile'>
+                        Perfil
+                    </NavLink> : ''
+                }
+            </nav>
+            {
+                token ? <button onClick={handleClickLogut}>Logout</button> : (
+                    <div className={styles.login}>
+                        <button className={styles.btnLogin} onClick={() => navigate('/login')}>Login</button>
+                        <button>Register</button>
+                    </div>
+                )
+            }
+        </header>
+    )
+}

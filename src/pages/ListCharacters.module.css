@@ -1,0 +1,16 @@
+@import '../index.css';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 1rem;
+    color: var(--text-title);
+}
+
+.notFound {
+    margin: auto;
+}

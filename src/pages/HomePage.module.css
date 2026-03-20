@@ -1,0 +1,16 @@
+@import '../index.css';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* height: 100%; */
+}
+
+button {
+    cursor: pointer;
+    height: 35px;
+    width: 100px;
+    border: none;
+    border-radius: 1rem;
+}

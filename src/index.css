@@ -1,0 +1,62 @@
+:root {
+  --bg-primary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-secondary: #1E1B4B;
+  --bg-btn-primary: #1E1B4B;
+  --text-title: #1E1B4B;
+  --text-primary: #475569;
+  --text-accent: #6366F1;
+  --bg-btn-secondary: #E2E8F0;
+  --bg-category: #4a62e7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+header {
+  background-color: var(--bg-card);
+  padding: .5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.42);
+}
+
+nav a {
+  color: var(--text-primary);
+}
+
+nav a:hover {
+  color: var(--text-accent);
+  font-weight: bold;
+  display: inline-block;
+  border-bottom: 3px solid var(--text-accent);
+  padding-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link-active {
+  color: var(--text-accent);
+  font-weight: bold;
+  display: inline-block;
+  border-bottom: 3px solid var(--text-accent);
+  padding-bottom: 5px;
+}
+
+button {
+  background-color: var(--bg-btn-primary);
+  color: white;
+}
+
+button:hover {
+  background-color: var(--bg-category);
+}

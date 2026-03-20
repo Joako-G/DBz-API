@@ -1,0 +1,140 @@
+@import '../index.css';
+
+.primarySection {
+    background-color: var(--bg-card);
+    display: flex;
+    padding: 3rem;
+    gap: 1rem;
+
+    .card {
+        transform: rotate(6deg);
+    }
+}
+
+.primarySection>div:first-child {
+    flex: 2;
+}
+
+/* .primarySection>div:last-child {
+    flex: 1;
+} */
+
+.info {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+
+    button {
+        display: flex;
+        gap: 1rem;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.title {
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--text-title);
+}
+
+.accent {
+    color: var(--text-accent);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.card {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 12px rgba(29, 28, 28, 0.589);
+    margin-right: 2rem;
+}
+
+.card img {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgba(99, 140, 168, 0.795);
+}
+
+.aboutProject {
+    display: flex;
+    gap: 3rem;
+    margin: 3rem;
+
+    div {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 3rem;
+        flex: 1;
+        gap: 1rem;
+        border-radius: 12px;
+        box-shadow: 10px 10px 12px rgba(27, 27, 27, 0.596);
+
+        p {
+            text-align: start;
+        }
+    }
+}
+
+.aboutProject>div:first-child h2 {
+    color: var(--text-title);
+}
+
+.project {
+    background-color: var(--bg-card);
+}
+
+.objective {
+    color: white;
+    background-color: var(--bg-card-secondary);
+}
+
+.someCharacters {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 3rem;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        background-color: var(--bg-card);
+        border-radius: 15px;
+        box-shadow: 5px 5px 12px rgba(29, 28, 28, 0.664);
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .card img {
+        width: auto;
+        height: 450px;
+        padding: 1rem;
+        background-color: #c8c8ca;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .charInfo {
+        text-align: start;
+        padding: 2rem 3rem;
+
+        .name {
+            color: var(--text-title);
+            font-weight: bold 900;
+            font-size: 35px;
+        }
+    }
+}

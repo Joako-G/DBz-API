@@ -1,0 +1,59 @@
+@import '../index.css';
+
+.paginationContainer {
+    display: flex;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--text-primary);
+        padding: .7rem;
+        border-radius: 2rem;
+        min-width: 40px;
+    }
+
+    a:hover {
+        background-color: #28219b;
+        color: white;
+    }
+
+    .isActive {
+        background-color: #28219b;
+        box-shadow: 1px 1px 8px #28219b;
+        color: white;
+        pointer-events: none;
+    }
+
+    .btnArrow {
+        padding: 0;
+        margin: 0;
+        width: 30px;
+        max-height: 30px;
+        background-color: transparent;
+        border-radius: .5rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .nextBtn:hover {
+        background-color: #6366F1;
+    }
+
+    .isAble {
+        margin: 0;
+        padding: 0;
+        width: 30px;
+        max-height: 30px;
+        background-color: transparent;
+        pointer-events: none;
+    }
+
+}

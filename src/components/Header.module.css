@@ -1,0 +1,33 @@
+@import '../index.css';
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 1rem;
+    position: relative;
+
+    .navLink {
+        display: flex;
+        gap: 1rem;
+        text-decoration: none;
+    }
+
+    .login {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .btnLogin {
+        color: var(--text-primary);
+        background-color: var(--bg-btn-secondary);
+        border: rgb(107, 106, 106) 1px solid;
+    }
+
+    .btnLogin:hover {
+        background-color: var(--bg-category);
+        color: white;
+    }
+}

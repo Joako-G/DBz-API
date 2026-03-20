@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+.containerLogin {
+    margin-top: auto;
+    max-width: 650px;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.formLogin {
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem;
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1rem;
+    align-items: center;
+
+    .formInput {
+        padding: .3rem;
+        border-radius: 5px;
+        font-size: 20px;
+        margin-bottom: 25px;
+
+    }
+}
+
+.btnLogIn {
+    width: 40%;
+    margin-top: auto;
+
+}
