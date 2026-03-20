@@ -1,5 +1,6 @@
 import type { UserInside } from "../interfaces/user.type"
 import styles from './Profile.module.css'
+import userImg from '../assets/user.png'
 
 interface ProfileProps {
     user: UserInside
@@ -7,16 +8,21 @@ interface ProfileProps {
 
 export function Profile({ user }: ProfileProps) {
     return (
-        <section className={styles.sectionContainer}>
-            <div className={styles.container}>
-                <h1>Perfil</h1>
-                <p> <strong>Nombre: </strong> {user?.name} </p>
-                <p> <strong>Apellido: </strong> {user?.lastname} </p>
-                <p> <strong>Nombre de usuario</strong> {user?.username} </p>
+        <div className={styles.container}>
+            <section className={styles.userSection}>
+                <img src={userImg} alt="User Image" />
+                <div className={styles.info}>
+                    <h1 className={styles.title}> {user.name} {user.lastname} </h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum omnis repudiandae voluptas autem dolore sed corporis illo optio, expedita sequi natus, esse fugit praesentium veritatis, est dolorum vero unde distinctio?</p>
+                </div>
+            </section>
+
+            <section className={styles.userFav}>
                 <div>
                     Lista de favoritos: []
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+
     )
 }
