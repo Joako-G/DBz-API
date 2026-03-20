@@ -2,10 +2,10 @@ import styles from './Home.module.css'
 import image from '../assets/Adobe Express - file.png'
 import type { character } from '../interfaces/character.types'
 import { useNavigate } from 'react-router-dom'
+import { raceGradients } from '../utils/raceGradients'
 
 export function Home() {
     const navigae = useNavigate()
-
 
     const characters: character[] = [
         {
@@ -70,16 +70,20 @@ export function Home() {
             <section className={styles.someCharacters}>
                 {/* <h2 className={styles.title}>Algunos personajes</h2> */}
                 {
-                    characters.map((char) => (
-                        <div className={styles.card} key={char.id}>
-                            <img src={char.image} alt={char.name} />
-                            <div className={styles.charInfo}>
-                                <h3 className={styles.name}> {char.name} </h3>
-                                <h3> {char.race} </h3>
-                                <h3> {char.ki} </h3>
+                    characters.map((char) => {
+                        const bgColor = raceGradients[char.race] || "linear-gradient(135deg, #ccc, #999)"
+
+                        return (
+                            <div className={styles.card} key={char.id}>
+                                <img src={char.image} alt={char.name} style={{ background: bgColor }} />
+                                <div className={styles.charInfo}>
+                                    <h3 className={styles.name}> {char.name} </h3>
+                                    <h3> {char.race} </h3>
+                                    <h3> {char.ki} </h3>
+                                </div>
                             </div>
-                        </div>
-                    ))
+                        )
+                    })
                 }
             </section>
 

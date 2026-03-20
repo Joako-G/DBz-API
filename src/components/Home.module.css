@@ -9,6 +9,17 @@
     .card {
         transform: rotate(6deg);
     }
+
+
+    .card img {
+        width: 100%;
+        height: 500px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(0deg, rgba(242, 138, 10, 1) 9%, rgba(21, 185, 214, 0.88) 100%);
+
+
+    }
 }
 
 .primarySection>div:first-child {
@@ -59,13 +70,6 @@
     margin-right: 2rem;
 }
 
-.card img {
-    width: 100%;
-    height: 500px;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    background-color: rgba(99, 140, 168, 0.795);
-}
 
 .aboutProject {
     display: flex;
@@ -123,7 +127,9 @@
         width: auto;
         height: 450px;
         padding: 1rem;
-        background-color: #c8c8ca;
+        /* background: linear-gradient(0deg, rgba(242, 138, 10, 1) 15%, rgba(242, 242, 24, 1) 90%); */
+        /* background: radial-gradient(circle, #00ffcc, #007bff); */
+
         border-radius: 15px 15px 0 0;
     }
 
