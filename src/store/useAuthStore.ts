@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { userSearch } from "../utils/userSearch";
 import type { UserInside } from "../interfaces/user.type";
+import { useFavoriteStore } from "./useFavoriteStore";
 
 interface AuthState {
     token: string | null;
@@ -26,11 +27,14 @@ export const useAuthStore = create<AuthState>()(
             login: (username, password) => {
 
                 const userFound = userSearch({ username, password })
-
-                console.log('User: ', userFound)
-
+    
                 if (userFound) {
-                    set({ token: 'FAKE_TOKEN', user: userFound, error: null })
+                    let newUser: UserInside = {
+                        ...userFound,
+                        favorites: [1, 2, 3]
+                    }
+                    set({ token: 'FAKE_TOKEN', user: newUser, error: null })
+                    useFavoriteStore.setState({ favorites: newUser.favorites })
                 } else {
                     set({ token: null, user: null, error: "Error en credenciales" })
                 }
