@@ -1,7 +1,10 @@
+import { useEffect } from 'react'
 import { Characters } from '../components/Characters'
 import { Form } from '../components/Form'
 import { Pagination } from '../components/Pagination'
 import { useCharacterFilter } from '../hooks/useCharacterFilter'
+import { useAuthStore } from '../store/useAuthStore'
+import { useFavoriteStore } from '../store/useFavoriteStore'
 
 import styles from './ListCharacters.module.css'
 
@@ -17,6 +20,16 @@ export function ListCharacters() {
         handlePageChange,
         onSearchText
     } = useCharacterFilter(CHARS_PER_PAGE)
+    const { user } = useAuthStore()
+    const { favorites } = useFavoriteStore()
+
+    useEffect(() => {
+        if (user) {
+            if (favorites.length <= user.favorites.length) {
+                useFavoriteStore.setState({ favorites: user.favorites })
+            }
+        }
+    }, [])
 
     return (
         <div className={styles.container}>
