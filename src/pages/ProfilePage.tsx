@@ -1,13 +1,49 @@
+import { useEffect, useState } from "react"
 import { Profile } from "../components/Profile"
 import { useAuthStore } from "../store/useAuthStore"
+import { useFavoriteStore } from "../store/useFavoriteStore"
+import type { CharacterId } from "../interfaces/character.types"
 
 export function ProfilePage() {
     const { user } = useAuthStore()
+    const { favorites } = useFavoriteStore()
+    const [favoriteChars, setFavoriteChars] = useState<CharacterId[]>([])
 
-    console.log('User Inside: ', user)
+    useEffect(() => {
+        if (user) {
+            if (favorites.length <= user.favorites.length) {
+                useFavoriteStore.setState({ favorites: user.favorites })
+            }
+        }
+    }, [])
+
+    useEffect(() => {
+        async function getCharacterId(id: number) {
+            try {
+                const response = await fetch(`https://dragonball-api.com/api/characters/${id}`)
+                const json = response.json()
+                return json
+            } catch (error) {
+                throw new Error('Ha ocurrido un problema inesperad!!!')
+            }
+        }
+
+        async function fetchFavorites() {
+            const characters = await Promise.all(
+                favorites.map((fav) => getCharacterId(fav))
+            )
+            if (characters) setFavoriteChars(characters)
+        }
+
+        if (favorites.length > 0) fetchFavorites()
+        console.log('ENTRA')
+    }, [favorites])
+
+
+
     return (
         <>
-            <Profile user={user!} />
+            <Profile user={user!} favorites={favoriteChars} />
         </>
     )
 }
