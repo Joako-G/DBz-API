@@ -25,7 +25,7 @@ export function ListCharacters() {
 
     useEffect(() => {
         if (user) {
-            if (favorites.length <= user.favorites.length) {
+            if (favorites.length <= 0) {
                 useFavoriteStore.setState({ favorites: user.favorites })
             }
         }
