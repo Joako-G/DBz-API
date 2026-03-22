@@ -12,7 +12,17 @@ export interface character {
 
 
 export interface CharacterId extends character {
-    transformations: Transformation[]
+    originPlanet: originPlanet;
+    transformations: Transformation[];
+
+}
+
+interface originPlanet {
+    id: string;
+    name: string;
+    description: string;
+    image: string;
+    isDestroyed: string;
 }
 
 interface Transformation {
