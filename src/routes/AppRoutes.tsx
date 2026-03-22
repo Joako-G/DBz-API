@@ -4,6 +4,7 @@ import { ProtectedRoute } from "../components/ProtectedRoute";
 import { HomePage } from "../pages/HomePage";
 import { ListCharacters } from "../pages/ListCharacters";
 import { ProfilePage } from "../pages/ProfilePage";
+import { CharacterPage } from "../pages/CharacterPage";
 
 export function AppRoutes() {
     return (
@@ -30,6 +31,13 @@ export function AppRoutes() {
                     <ProtectedRoute>
                         <ProfilePage />
                     </ProtectedRoute>
+                }
+            />
+
+            <Route
+                path='/characters-detail/:id'
+                element={
+                    <CharacterPage />
                 }
             />
         </Routes>
