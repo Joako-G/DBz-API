@@ -2,16 +2,16 @@ import { useEffect, useState } from "react"
 import { Profile } from "../components/Profile"
 import { useAuthStore } from "../store/useAuthStore"
 import { useFavoriteStore } from "../store/useFavoriteStore"
-import type { CharacterId } from "../interfaces/character.types"
+import type { character } from "../interfaces/character.types"
 
 export function ProfilePage() {
     const { user } = useAuthStore()
     const { favorites } = useFavoriteStore()
-    const [favoriteChars, setFavoriteChars] = useState<CharacterId[]>([])
+    const [favoriteChars, setFavoriteChars] = useState<character[]>([])
 
     useEffect(() => {
         if (user) {
-            if (favorites.length <= user.favorites.length) {
+            if (favorites.length <= 0) {
                 useFavoriteStore.setState({ favorites: user.favorites })
             }
         }
@@ -36,7 +36,6 @@ export function ProfilePage() {
         }
 
         if (favorites.length > 0) fetchFavorites()
-        console.log('ENTRA')
     }, [favorites])
 
 
