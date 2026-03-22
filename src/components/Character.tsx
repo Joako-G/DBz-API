@@ -3,6 +3,7 @@ import { useAuthStore } from "../store/useAuthStore.ts"
 import { useFavoriteStore } from "../store/useFavoriteStore.ts"
 import styles from './Character.module.css'
 import { raceGradients } from "../utils/raceGradients.ts"
+import { useNavigate } from "react-router-dom"
 
 interface prop {
     character: character
@@ -11,6 +12,8 @@ interface prop {
 export function Character({ character }: prop) {
     const { user } = useAuthStore()
     const { isFavorite, addFavorite, removeFavorite } = useFavoriteStore()
+    const navigate = useNavigate()
+
     const bgColor = raceGradients[character.race] || "linear-gradient(135deg, #ccc, #999)";
     const isFav = isFavorite(character.id)
 
@@ -34,7 +37,7 @@ export function Character({ character }: prop) {
 
 
             <div className={styles.btnActions}>
-                <button> Ver mas </button>
+                <button onClick={() => navigate(`/characters-detail/${character.id}`)}> Ver mas </button>
                 <button className={styles.favorite} disabled={!user} style={{ pointerEvents: !user ? 'none' : 'auto' }} onClick={handleClickFavorites}>
                     <svg className={styles.heart} style={{ fill: isFav ? 'red' : 'white' }} width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
                         strokeLinejoin="round">
