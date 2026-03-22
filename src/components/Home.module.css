@@ -22,16 +22,9 @@
     }
 }
 
-.primarySection>div:first-child {
-    flex: 2;
-}
-
-/* .primarySection>div:last-child {
-    flex: 1;
-} */
-
 .info {
     display: flex;
+    flex: 2;
     gap: 1rem;
     flex-direction: column;
     justify-content: center;
