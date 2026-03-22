@@ -4,6 +4,7 @@
         "name": "Matias Joaquin",
         "lastname": "Gallardo",
         "username": "JoakoG",
-        "password": "1234"
+        "password": "1234",
+        "favorites": []
     }
 ]

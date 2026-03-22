@@ -13,7 +13,8 @@ export function userSearch({ username, password }: props): UserInside | undefine
         const userInside: UserInside = {
             name: userFound.name,
             lastname: userFound.lastname,
-            username: userFound.username
+            username: userFound.username,
+            favorites: userFound.favorites
         }
 
         return userInside
