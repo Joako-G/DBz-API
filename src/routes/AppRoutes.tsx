@@ -5,6 +5,7 @@ import { HomePage } from "../pages/HomePage";
 import { ListCharacters } from "../pages/ListCharacters";
 import { ProfilePage } from "../pages/ProfilePage";
 import { CharacterPage } from "../pages/CharacterPage";
+import { RegisterPage } from "../pages/RegisterPage";
 
 export function AppRoutes() {
     return (
@@ -38,6 +39,13 @@ export function AppRoutes() {
                 path='/characters-detail/:id'
                 element={
                     <CharacterPage />
+                }
+            />
+
+            <Route
+                path='/register'
+                element={
+                    <RegisterPage />
                 }
             />
         </Routes>
