@@ -1,0 +1,64 @@
+@import '../index.css';
+@import "tailwindcss";
+
+.container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    background-color: var(--bg-card);
+    padding: 3rem;
+    border-radius: 15px;
+    color: black;
+}
+
+.title {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    gap: 2rem;
+}
+
+.infoUser {
+    display: flex;
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1rem;
+        width: 100%;
+    }
+
+
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.bgInput {
+    background-color: rgba(172, 169, 169, 0.575);
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+
+input {
+    background-color: transparent;
+    border: none;
+    height: 45px;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.btnRegister {
+    width: 40%;
+    margin: 0 auto;
+}
