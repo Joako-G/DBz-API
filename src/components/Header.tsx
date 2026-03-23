@@ -35,7 +35,7 @@ export function Header() {
                 token ? <button onClick={handleClickLogut}>Logout</button> : (
                     <div className={styles.login}>
                         <button className={styles.btnLogin} onClick={() => navigate('/login')}>Login</button>
-                        <button>Register</button>
+                        <button onClick={() => navigate('/register')}>Register</button>
                     </div>
                 )
             }

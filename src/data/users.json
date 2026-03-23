@@ -5,6 +5,6 @@
         "lastname": "Gallardo",
         "username": "JoakoG",
         "password": "1234",
-        "favorites": []
+        "favorites": [1, 2, 3]
     }
 ]
