@@ -10,14 +10,6 @@ export function ProfilePage() {
     const [favoriteChars, setFavoriteChars] = useState<character[]>([])
 
     useEffect(() => {
-        if (user) {
-            if (favorites.length <= 0) {
-                useFavoriteStore.setState({ favorites: user.favorites })
-            }
-        }
-    }, [])
-
-    useEffect(() => {
         async function getCharacterId(id: number) {
             try {
                 const response = await fetch(`https://dragonball-api.com/api/characters/${id}`)

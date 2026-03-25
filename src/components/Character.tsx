@@ -11,7 +11,13 @@ interface prop {
 
 export function Character({ character }: prop) {
     const { user } = useAuthStore()
-    const { isFavorite, addFavorite, removeFavorite } = useFavoriteStore()
+
+    const addFavorite = useFavoriteStore(state => state.addFavorite)
+    const removeFavorite = useFavoriteStore(state => state.removeFavorite)
+    const isFavorite = useFavoriteStore(state => state.isFavorite)
+
+
+
     const navigate = useNavigate()
 
     const bgColor = raceGradients[character.race] || "linear-gradient(135deg, #ccc, #999)";

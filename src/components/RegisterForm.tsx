@@ -1,9 +1,8 @@
 import { useId } from 'react'
 import styles from './RegisterForm.module.css'
 import type { User } from '../interfaces/user.type'
-import data from '../data/users.json'
 import { useNavigate } from 'react-router-dom'
-import { useAuthStore } from '../store/useAuthStore'
+import { newUsers } from '../services/serviceChar'
 // import ModalDemo from "@/components/ui/modal-dialog";
 
 
@@ -15,13 +14,9 @@ export function RegisterForm() {
     const idUsername = useId()
     const idPassword = useId()
     const navigate = useNavigate()
-    const { login } = useAuthStore()
-    const users: User[] = data
 
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-
 
         const fromData = new FormData(event.currentTarget)
 
@@ -32,15 +27,15 @@ export function RegisterForm() {
 
         if (name && lastName && username && password) {
             const newUser: User = {
-                name: name.toString(),
-                lastname: lastName.toString(),
-                username: username.toString(),
-                password: password.toString(),
+                name: name,
+                lastname: lastName,
+                username: username,
+                password: password,
                 favorites: []
             }
 
-            users.push(newUser)
-            login(username, password)
+            // AGREGAR MENSAJE DE RESPUESTA DE LA API
+            await newUsers(newUser)
             navigate('/')
         }
 

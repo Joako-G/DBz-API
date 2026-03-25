@@ -1,16 +1,20 @@
-import users from '../data/users.json'
-import type { UserInside } from '../interfaces/user.type'
+import type { User, UserInside } from '../interfaces/user.type'
+import { getUserByUsername } from '../services/serviceChar'
 
 interface props {
     username: string
     password: string
 }
 
-export function userSearch({ username, password }: props): UserInside | undefined {
+export async function userSearch({ username, password }: props): Promise<UserInside | undefined> {
+
+    const users: User[] = await getUserByUsername(username)
+
     const userFound: UserInside | undefined = users.find((u) => (username === u.username && password === u.password))
 
     if (userFound) {
         const userInside: UserInside = {
+            id: userFound.id,
             name: userFound.name,
             lastname: userFound.lastname,
             username: userFound.username,
