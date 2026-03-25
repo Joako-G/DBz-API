@@ -1,9 +1,7 @@
 import { useId } from 'react'
 import styles from './RegisterForm.module.css'
 import type { User } from '../interfaces/user.type'
-import data from '../data/users.json'
 import { useNavigate } from 'react-router-dom'
-import { useAuthStore } from '../store/useAuthStore'
 import { newUsers } from '../services/serviceChar'
 // import ModalDemo from "@/components/ui/modal-dialog";
 
