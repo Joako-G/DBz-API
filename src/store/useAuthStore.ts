@@ -9,7 +9,7 @@ interface AuthState {
     user: UserInside | null
     error: string | null
     setToken: (token: string) => void;
-    login: (username: string, password: string) => void;
+    login: (username: string, password: string) => Promise<void>;
     logout: () => void
 }
 
@@ -24,25 +24,36 @@ export const useAuthStore = create<AuthState>()(
 
             setToken: (token) => set({ token }),
 
-            login: (username, password) => {
+            login: async (username, password) => {
 
-                const userFound = userSearch({ username, password })
-    
+                const userFound = await userSearch({ username, password })
+                console.log('UserFound: ', userFound)
+
+
                 if (userFound) {
-                    let newUser: UserInside = {
-                        ...userFound,
-                        favorites: [1, 2, 3]
-                    }
-                    set({ token: 'FAKE_TOKEN', user: newUser, error: null })
-                    useFavoriteStore.setState({ favorites: newUser.favorites })
+                    set({ token: 'FAKE_TOKEN', user: userFound, error: null })
+                    useFavoriteStore.setState({ favorites: userFound.favorites })
                 } else {
                     set({ token: null, user: null, error: "Error en credenciales" })
                 }
 
             },
 
-            logout: () => set({ token: null, user: null })
+            logout: () => {
+                const { clearFavorite } = useFavoriteStore.getState()
+                set({ token: null, user: null })
+                clearFavorite()
+            }
+
+
         }),
-        { name: 'auth-storage' }
+        {
+            name: 'auth-storage',
+            onRehydrateStorage: () => (state) => {
+                if (state?.user?.favorites) {
+                    useFavoriteStore.setState({ favorites: state.user.favorites })
+                }
+            }
+        }
     )
 )
