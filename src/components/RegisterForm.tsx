@@ -35,7 +35,7 @@ export function RegisterForm() {
             }
 
             // AGREGAR MENSAJE DE RESPUESTA DE LA API
-            const data = await newUsers(newUser)
+            await newUsers(newUser)
             navigate('/')
         }
 
