@@ -7,10 +7,19 @@
 }
 
 .title {
-    margin: 1rem;
+    margin-top: 2rem;
+    font-size: 50px;
+    font-weight: bold;
     color: var(--text-title);
 }
 
 .notFound {
-    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 50vh;
+
+    h1 {
+        font-weight: bold;
+        font-size: 50px;
+    }
 }

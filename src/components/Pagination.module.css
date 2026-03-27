@@ -16,8 +16,8 @@
         text-decoration: none;
         color: var(--text-primary);
         padding: .7rem;
-        border-radius: 2rem;
-        min-width: 40px;
+        border-radius: 50%;
+        min-width: 45px;
     }
 
     a:hover {
@@ -33,18 +33,20 @@
     }
 
     .btnArrow {
-        padding: 0;
-        margin: 0;
-        width: 30px;
-        max-height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
         background-color: transparent;
-        border-radius: .5rem;
+        border-radius: 50%;
         font-weight: bold;
         cursor: pointer;
     }
 
-    .nextBtn:hover {
-        background-color: #6366F1;
+    .btnArrow:hover {
+        background-color: #28219b;
+        box-shadow: 1px 1px 8px #28219b;
     }
 
     .isAble {

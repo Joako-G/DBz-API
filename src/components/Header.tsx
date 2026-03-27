@@ -32,10 +32,10 @@ export function Header() {
                 }
             </nav>
             {
-                token ? <button onClick={handleClickLogut}>Logout</button> : (
+                token ? <button className={styles.btn} onClick={handleClickLogut}>Logout</button> : (
                     <div className={styles.login}>
                         <button className={styles.btnLogin} onClick={() => navigate('/login')}>Login</button>
-                        <button onClick={() => navigate('/register')}>Register</button>
+                        <button className={styles.btn} onClick={() => navigate('/register')}>Register</button>
                     </div>
                 )
             }

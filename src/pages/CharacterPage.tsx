@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { CharacterId } from "../interfaces/character.types";
 import styles from './CharacterPage.module.css'
 
-export function CharacterPage() {
+export default function CharacterPage() {
     const [character, setCharacter] = useState<CharacterId>()
     const params = useParams()
 

@@ -10,6 +10,8 @@
     overflow: hidden;
     margin: 0;
     position: relative;
+    /* width: 255px;
+    height: 530px; */
 
     .race {
         position: absolute;
@@ -34,10 +36,16 @@
 
 .title {
     color: var(--text-title);
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .charInfo {
-    text-align: center;
+    text-align: start;
+    margin-left: 1rem;
 }
 
 .description {
@@ -53,17 +61,19 @@
     margin: auto;
     padding-bottom: 1rem;
 
-    button {
+    .more {
         align-self: center;
-        background-color: rgb(18, 95, 172);
-        width: 100px;
-        height: 2rem;
+        background-color: var(--bg-btn-secondary);
+        color: var(--text-title);
+        font-weight: bold;
+        width: 200px;
+        height: 2.5rem;
         margin-top: auto;
-        border-radius: .5rem;
+        border-radius: 1rem;
         cursor: pointer;
     }
 
-    button:hover {
+    .more:hover {
         background-color: rgb(22, 118, 214);
     }
 
@@ -81,4 +91,8 @@
 
     }
 
+}
+
+.heart {
+    color: white;
 }
