@@ -9,6 +9,14 @@
     background-color: var(--bg-category);
 }
 
+.titleLogo {
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgb(156, 158, 27) 0%, rgba(255, 150, 13, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .container {
     display: flex;
     align-items: center;
