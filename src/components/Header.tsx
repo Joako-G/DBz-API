@@ -15,7 +15,7 @@ export function Header() {
         <header className={styles.container}>
             <div className={styles.logo}>
                 <NavLink to='/'>
-                    Logo
+                    <h1 className={styles.titleLogo}><strong>DBz-API</strong></h1>
                 </NavLink>
             </div>
             <nav className={styles.navLink}>
