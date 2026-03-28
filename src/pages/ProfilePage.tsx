@@ -27,10 +27,8 @@ export default function ProfilePage() {
             if (characters) setFavoriteChars(characters)
         }
 
-        if (favorites.length > 0) fetchFavorites()
+        fetchFavorites()
     }, [favorites])
-
-
 
     return (
         <>
