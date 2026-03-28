@@ -1,3 +1,4 @@
+import { Spinner } from '@/components/Spinner'
 import { Characters } from '../components/Characters'
 import { Form } from '../components/Form'
 import { Pagination } from '../components/Pagination'
@@ -25,7 +26,7 @@ export default function ListCharacters() {
 
             {
                 loading ?
-                    'Cargando personajes'
+                    <Spinner />
                     :
                     characters.length > 0 ? (
                         <>
