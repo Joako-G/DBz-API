@@ -5,19 +5,32 @@ import { Pagination } from '../components/Pagination'
 import { useCharacterFilter } from '../hooks/useCharacterFilter'
 
 import styles from './ListCharacters.module.css'
+import { useEffect, useState } from 'react'
 
 const CHARS_PER_PAGE = 8
 
 export default function ListCharacters() {
+    const [showSpinner, setShowSpinner] = useState(true)
+
     const {
         characters,
         pagination,
-        loading,
         currentPage,
         inputText,
         handlePageChange,
         onSearchText
     } = useCharacterFilter(CHARS_PER_PAGE)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowSpinner(false)
+        }, 1000)
+
+        return () =>{
+             clearTimeout(timer)
+             setShowSpinner(true)
+        }
+    }, [currentPage, inputText])
 
     return (
         <div className={styles.container}>
@@ -25,7 +38,7 @@ export default function ListCharacters() {
             <Form initialText={inputText} onSearchText={onSearchText} />
 
             {
-                loading ?
+                showSpinner ?
                     <Spinner />
                     :
                     characters.length > 0 ? (
