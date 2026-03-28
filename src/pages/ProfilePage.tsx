@@ -4,7 +4,7 @@ import { useAuthStore } from "../store/useAuthStore"
 import { useFavoriteStore } from "../store/useFavoriteStore"
 import type { character } from "../interfaces/character.types"
 
-export function ProfilePage() {
+export default function ProfilePage() {
     const { user } = useAuthStore()
     const { favorites } = useFavoriteStore()
     const [favoriteChars, setFavoriteChars] = useState<character[]>([])
@@ -27,10 +27,8 @@ export function ProfilePage() {
             if (characters) setFavoriteChars(characters)
         }
 
-        if (favorites.length > 0) fetchFavorites()
+        fetchFavorites()
     }, [favorites])
-
-
 
     return (
         <>

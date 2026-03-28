@@ -23,25 +23,37 @@ export function FormLogin() {
     return (
         <section className={styles.container}>
             <div className={styles.containerLogin}>
+                <h1 className={styles.title}>Bienvenido</h1>
                 <form onSubmit={handleSubmit} role="search" className={styles.formLogin}>
-                    {/* <label htmlFor=""></label> */}
-                    <input
-                        className={styles.formInput}
-                        type="text"
-                        placeholder="Username"
-                        onChange={(e) => setUserName(e.target.value)}
-                        required
-                    />
-                    <input
-                        className={styles.formInput}
-                        type="password"
-                        placeholder="Password"
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
+                    <div className={styles.inputs}>
+                        <label htmlFor="username">Usuario</label>
+                        <div className={styles.bgInput}>
+                            <input
+                                className={styles.formInput}
+                                id='username'
+                                type="text"
+                                placeholder="Usuario"
+                                onChange={(e) => setUserName(e.target.value)}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className={styles.inputs}>
+                        <label htmlFor="password">Contraseña</label>
+                        <div className={styles.bgInput}>
+                            <input
+                                className={styles.formInput}
+                                id='password'
+                                type="password"
+                                placeholder="Contraseña"
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                    </div>
 
                     <button className={styles.btnLogIn}>Log in</button>
-                    {!user && error && <p style={{ color: "red" }}>{error}</p>}
+                    {!user && error && <p style={{ color: "red", marginTop: '5px' }}>{error}</p>}
 
                 </form>
             </div>

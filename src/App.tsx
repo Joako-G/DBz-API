@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from './components/Header'
 import styles from './App.module.css'
 import { AppRoutes } from './routes/AppRoutes'

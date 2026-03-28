@@ -1,5 +1,14 @@
 @import '../index.css';
 
+.btn {
+    background-color: var(--bg-btn-primary);
+    color: white;
+}
+
+.btn:hover {
+    background-color: var(--bg-category);
+}
+
 .container {
     display: flex;
     align-items: center;

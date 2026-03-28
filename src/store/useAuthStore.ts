@@ -9,6 +9,7 @@ interface AuthState {
     user: UserInside | null
     error: string | null
     setToken: (token: string) => void;
+    setError: (msg: string) => void;
     login: (username: string, password: string) => Promise<void>;
     logout: () => void
 }
@@ -21,6 +22,8 @@ export const useAuthStore = create<AuthState>()(
             user: null,
 
             error: null,
+            
+            setError: (msg) => set({ error: msg }),
 
             setToken: (token) => set({ token }),
 
@@ -50,6 +53,9 @@ export const useAuthStore = create<AuthState>()(
         {
             name: 'auth-storage',
             onRehydrateStorage: () => (state) => {
+                if (state) {
+                    state.error = null
+                }
                 if (state?.user?.favorites) {
                     useFavoriteStore.setState({ favorites: state.user.favorites })
                 }
