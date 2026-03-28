@@ -5,9 +5,7 @@ import { useNavigate } from 'react-router-dom'
 export function SearchForm() {
     const [nameChar, setNameChar] = useState<string>('')
     const navigate = useNavigate()
-
-    console.log('Name: ', nameChar)
-
+    
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         navigate(`characters?name=${nameChar}`)
