@@ -3,11 +3,10 @@ import { Character } from './Character.tsx'
 import styles from './Characters.module.css'
 
 interface prop {
-    characters: character[]
+    characters: character[];
 }
 
 export function Characters({ characters }: prop) {
-
     return (
         <div className={styles.cards}>
             {

@@ -1,16 +1,18 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { LoginPage } from "../pages/LoginPage";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import { HomePage } from "../pages/HomePage";
-import { ListCharacters } from "../pages/ListCharacters";
-import { ProfilePage } from "../pages/ProfilePage";
-import { CharacterPage } from "../pages/CharacterPage";
-import { RegisterPage } from "../pages/RegisterPage";
+
+const PageLogin = lazy(() => import('../pages/LoginPage'))
+const PageCharacters = lazy(() => import('../pages/ListCharacters'))
+const PageProfile = lazy(() => import('../pages/ProfilePage'))
+const PageCharacter = lazy(() => import('../pages/CharacterPage'))
+const PageRegister = lazy(() => import('../pages/RegisterPage'))
 
 export function AppRoutes() {
     return (
         <Routes>
-            <Route path='/login' element={<LoginPage />} />
+            <Route path='/login' element={<PageLogin />} />
 
             <Route
                 path='/'
@@ -22,7 +24,7 @@ export function AppRoutes() {
             <Route
                 path='/characters'
                 element={
-                    <ListCharacters />
+                    <PageCharacters />
                 }
             />
 
@@ -30,7 +32,7 @@ export function AppRoutes() {
                 path='/profile'
                 element={
                     <ProtectedRoute>
-                        <ProfilePage />
+                        <PageProfile />
                     </ProtectedRoute>
                 }
             />
@@ -38,16 +40,18 @@ export function AppRoutes() {
             <Route
                 path='/characters-detail/:id'
                 element={
-                    <CharacterPage />
+                    <PageCharacter />
                 }
             />
 
             <Route
                 path='/register'
                 element={
-                    <RegisterPage />
+                    <PageRegister />
                 }
             />
+
+            {/* <Route path="*" element={<NotFoundPage} /> */}
         </Routes>
     )
 }

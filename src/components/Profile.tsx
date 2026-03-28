@@ -3,6 +3,8 @@ import styles from './Profile.module.css'
 import userImg from '../assets/user.png'
 import type { character } from "../interfaces/character.types"
 import { Character } from "./Character"
+import { useEffect, useState } from "react"
+import { Spinner } from "./Spinner"
 
 interface ProfileProps {
     user: UserInside;
@@ -10,6 +12,16 @@ interface ProfileProps {
 }
 
 export function Profile({ user, favorites }: ProfileProps) {
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false)
+        }, 1000)
+
+        return () => clearTimeout(timer)
+    }, [])
+
     return (
         <div className={styles.container}>
             <section className={styles.userSection}>
@@ -21,13 +33,19 @@ export function Profile({ user, favorites }: ProfileProps) {
             </section>
 
             <section className={styles.userFav}>
-                <div className={styles.cards}>
-                    {
-                        favorites.map((fav) => (
-                            <Character character={fav} key={fav.id} />
-                        ))
-                    }
-                </div>
+                {
+                    loading ? <Spinner /> :
+                        favorites.length > 0 ?
+                            <div className={styles.cards}>
+                                {
+                                    favorites.map((fav) => (
+                                        <Character character={fav} key={fav.id} />
+                                    ))
+                                }
+                            </div>
+                            :
+                            <h1 className={styles.noFav}>No tienes personajes favoritos por el momento   </h1>
+                }
             </section>
         </div>
 

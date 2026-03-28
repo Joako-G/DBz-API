@@ -61,4 +61,10 @@ input {
 .btnRegister {
     width: 40%;
     margin: 0 auto;
+    background-color: var(--bg-btn-primary);
+    color: white;
+}
+
+.btnRegister {
+    background-color: var(--bg-category);
 }

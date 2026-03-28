@@ -1,7 +1,10 @@
 import { FormLogin } from "../components/FormLogin";
+import styles from './LoginPage.module.css'
 
-export function LoginPage() {
+export default function LoginPage() {
     return (
-        <FormLogin />
+        <div className={styles.container}>
+            <FormLogin />
+        </div>
     )
 }

@@ -73,8 +73,11 @@ export function useCharacterFilter(CHARS_PER_PAGE: number) {
 
         }
 
-        getCharacters()
+        const timer = setTimeout(() => {
+            getCharacters()
+        }, 1500)
 
+        return () => clearTimeout(timer)
     }, [currentPage, inputText])
 
     /**

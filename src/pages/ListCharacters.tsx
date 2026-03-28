@@ -1,3 +1,4 @@
+import { Spinner } from '@/components/Spinner'
 import { Characters } from '../components/Characters'
 import { Form } from '../components/Form'
 import { Pagination } from '../components/Pagination'
@@ -7,7 +8,7 @@ import styles from './ListCharacters.module.css'
 
 const CHARS_PER_PAGE = 8
 
-export function ListCharacters() {
+export default function ListCharacters() {
     const {
         characters,
         pagination,
@@ -25,7 +26,7 @@ export function ListCharacters() {
 
             {
                 loading ?
-                    'Cargando personajes'
+                    <Spinner />
                     :
                     characters.length > 0 ? (
                         <>
@@ -33,7 +34,11 @@ export function ListCharacters() {
                             <Pagination currentPage={currentPage} pagination={pagination} handlePageChange={handlePageChange} />
 
                         </>
-                    ) : <h1 className={styles.notFound}>No hay Personajes</h1>
+                    ) : (
+                        <div className={styles.notFound}>
+                            <h1 >No existen personajes con ese nombre</h1>
+                        </div>
+                    )
             }
         </div>
     )
