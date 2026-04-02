@@ -44,7 +44,7 @@ export function Home() {
     ]
 
     return (
-        <div className={styles.mainContainer}>
+        <main className={styles.container}>
             <section className={styles.primarySection}>
                 <div className={styles.info}>
                     <h1 className={styles.title}> Dragon Ball Z</h1>
@@ -110,6 +110,6 @@ export function Home() {
                     </p>
                 </div>
             </section>
-        </div>
+        </main>
     )
 }
