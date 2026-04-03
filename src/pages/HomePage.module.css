@@ -9,7 +9,7 @@
 button {
     cursor: pointer;
     height: 35px;
-    width: 100px;
+    width: 100%;
     border: none;
     border-radius: 1rem;
 }

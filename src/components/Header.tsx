@@ -18,15 +18,15 @@ export function Header() {
                     <h1 className={styles.titleLogo}><strong>DBz-API</strong></h1>
                 </NavLink>
             </div>
-            <nav className={styles.navLink}>
-                <NavLink className={({ isActive }) => isActive ? 'nav-link-active' : 'nav-link'} to={'/'}>
+            <nav className={styles.navLinks}>
+                <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to={'/'}>
                     Inicio
                 </NavLink>
-                <NavLink className={({ isActive }) => isActive ? 'nav-link-active' : 'nav-link'} to='/characters'>
+                <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to='/characters'>
                     Personajes
                 </NavLink>
                 {
-                    token ? <NavLink className={({ isActive }) => isActive ? 'nav-link-active' : ''} to='/profile'>
+                    token ? <NavLink className={({ isActive }) => isActive ? styles.navLinkActive : styles.navLink} to='/profile'>
                         Perfil
                     </NavLink> : ''
                 }

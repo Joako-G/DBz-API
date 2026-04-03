@@ -1,5 +1,63 @@
 @import '../index.css';
 
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.titleLogo {
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgb(156, 158, 27) 0%, rgba(255, 150, 13, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: 46%;
+    text-decoration: none;
+}
+
+.navLinkActive {
+    color: var(--text-accent);
+    border-bottom: 3px solid var(--text-accent);
+    padding-bottom: 2px;
+}
+
+nav a:hover {
+    color: var(--text-accent);
+    display: inline-block;
+    border-bottom: 3px solid var(--text-accent);
+    padding-bottom: 2px;
+}
+
+
+.login {
+    display: flex;
+    justify-content: end;
+    font-size: 13px;
+    width: 30%;
+    gap: .5rem;
+}
+
+.btnLogin {
+    color: var(--text-primary);
+    background-color: var(--bg-btn-secondary);
+    border: rgb(107, 106, 106) 1px solid;
+}
+
+.btnLogin:hover {
+    background-color: var(--bg-category);
+    color: white;
+}
+
 .btn {
     background-color: var(--bg-btn-primary);
     color: white;
@@ -9,42 +67,24 @@
     background-color: var(--bg-category);
 }
 
-.titleLogo {
-    font-size: 30px;
-    font-weight: bold;
-    background: linear-gradient(90deg, rgb(156, 158, 27) 0%, rgba(255, 150, 13, 1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+@media(min-width: 768px) {
+    .container {
+        justify-content: space-between;
+        padding: 1rem;
+    }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    padding: 1rem;
-    position: relative;
-
-    .navLink {
-        display: flex;
-        gap: 1rem;
-        text-decoration: none;
+    .titleLogo {
+        font-size: 25px;
     }
 
     .login {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
+        font-size: 18px;
+        width: 30%;
     }
+}
 
-    .btnLogin {
-        color: var(--text-primary);
-        background-color: var(--bg-btn-secondary);
-        border: rgb(107, 106, 106) 1px solid;
-    }
-
-    .btnLogin:hover {
-        background-color: var(--bg-category);
-        color: white;
+@media(min-width: 1024px) {
+    .login {
+        width: 13%;
     }
 }
