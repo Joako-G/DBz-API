@@ -1,6 +1,29 @@
 .cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 300px);
+    justify-content: center;
+    width: 70%;
     gap: 3rem;
     margin: 5rem 0;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 300px);
+
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(3, 300px);
+
+    }
+}
+
+@media (min-width: 1440px) {
+    .cards {
+        grid-template-columns: repeat(4, 300px);
+
+    }
 }

@@ -2,6 +2,7 @@ import type React from 'react'
 import type { pagination, links } from '../interfaces/pagination.type'
 import { useLocation } from 'react-router-dom'
 import styles from './Pagination.module.css'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 interface props {
     currentPage: number,
@@ -12,8 +13,29 @@ interface props {
 
 export function Pagination({ currentPage, pagination, handlePageChange }: props) {
     const location = useLocation()
+    const isMobile = useMediaQuery('(max-width: 768px)');
 
     const pages = Array.from({ length: pagination?.totalPages ?? 0 }, (_, i) => 1 + i)
+
+    // const getPages = () => {
+    //     const pagesMobile = [];
+    //     if (pagination?.totalPages) {
+    //         if (currentPage > 3) pagesMobile.push(1, '...')
+
+    //         for (let i = currentPage - 1; i <= currentPage; i++) {
+    //             if (i > 0 && i <= pagination?.totalPages) {
+    //                 pagesMobile.push(i)
+    //             }
+    //         }
+
+    //         if (currentPage < pagination.totalPages - 2) {
+    //             pagesMobile.push('...', pagination.totalPages)
+    //         }
+    //     }
+
+    //     return pagesMobile
+
+    // }
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault()
@@ -40,17 +62,20 @@ export function Pagination({ currentPage, pagination, handlePageChange }: props)
                         </path>
                     </svg>
                 </button>
-                {pages.map((page) => (
-                    <a
-                        key={page}
-                        data-page={page}
-                        onClick={handleClick}
-                        href={buildpageUrl(page)}
-                        className={currentPage === page ? styles.isActive : ''}
-                    >
-                        {page}
-                    </a>
-                ))}
+                {isMobile ?
+                    <h3>Pagina {currentPage} de {pagination?.totalPages}</h3>
+                    :
+                    pages.map((page) => (
+                        <a
+                            key={page}
+                            data-page={page}
+                            onClick={handleClick}
+                            href={buildpageUrl(page)}
+                            className={currentPage === page ? styles.isActive : ''}
+                        >
+                            {page}
+                        </a>
+                    ))}
                 <button disabled={currentPage === pagination?.totalPages} onClick={() => handlePageChange(currentPage + 1)} className={currentPage === pagination?.totalPages ? `${styles.isAble}` : `${styles.btnArrow}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8899a4" strokeWidth="2" strokeLinecap="round">
                         <path d="M9 18l6-6-6-6">

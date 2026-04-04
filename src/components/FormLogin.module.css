@@ -7,7 +7,8 @@
 }
 
 .container {
-    width: 600px;
+    width: 100%;
+    max-width: 700px;
     height: 600px;
     margin: auto;
     background-color: var(--bg-card);
@@ -26,6 +27,10 @@
 .inputs {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+input {
     width: 100%;
 }
 
