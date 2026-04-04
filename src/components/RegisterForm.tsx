@@ -61,18 +61,14 @@ export function RegisterForm() {
                     </div>
                 </div>
 
-                <div>
-                    <label htmlFor="username">Nombre de usuario</label>
-                    <div className={styles.bgInput}>
-                        <input type="text" placeholder="Nombre de usuario" name={idUsername} id="username" />
-                    </div>
+                <label htmlFor="username">Nombre de usuario</label>
+                <div className={styles.bgInput}>
+                    <input type="text" placeholder="Nombre de usuario" name={idUsername} id="username" />
                 </div>
 
-                <div>
-                    <label htmlFor="password">Contraseña</label>
-                    <div className={styles.bgInput}>
-                        <input type="password" placeholder="Contraseña" name={idPassword} id="password" />
-                    </div>
+                <label htmlFor="password">Contraseña</label>
+                <div className={styles.bgInput}>
+                    <input type="password" placeholder="Contraseña" name={idPassword} id="password" />
                 </div>
 
                 <button className={styles.btnRegister}> Registrar</button>

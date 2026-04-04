@@ -3,13 +3,14 @@
 .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
     position: relative;
 }
 
 .titleLogo {
-    width: 100%;
-    font-size: 15px;
+    flex: 1;
+    font-size: 20px;
     font-weight: bold;
     background: linear-gradient(90deg, rgb(156, 158, 27) 0%, rgba(255, 150, 13, 1) 100%);
     -webkit-background-clip: text;
@@ -17,37 +18,39 @@
 }
 
 .navLinks {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    width: 46%;
-    text-decoration: none;
+}
+
+.navLink {
+    padding-bottom: 2px;
 }
 
 .navLinkActive {
     color: var(--text-accent);
     border-bottom: 3px solid var(--text-accent);
+    transition: all 0.2s ease;
     padding-bottom: 2px;
 }
 
-nav a:hover {
+.navLinks a:hover {
     color: var(--text-accent);
     display: inline-block;
     border-bottom: 3px solid var(--text-accent);
     padding-bottom: 2px;
 }
 
-
 .login {
     display: flex;
-    justify-content: end;
-    font-size: 13px;
-    width: 30%;
     gap: .5rem;
 }
 
 .btnLogin {
+    padding: 0 25px;
+    border-radius: 999px;
+    font-weight: bold;
     color: var(--text-primary);
     background-color: var(--bg-btn-secondary);
     border: rgb(107, 106, 106) 1px solid;
@@ -59,6 +62,8 @@ nav a:hover {
 }
 
 .btn {
+    padding: 0 25px;
+    border-radius: 999px;
     background-color: var(--bg-btn-primary);
     color: white;
 }
@@ -73,18 +78,27 @@ nav a:hover {
         padding: 1rem;
     }
 
+    .navLinks {
+        display: flex;
+        flex: 1;
+        gap: 1rem;
+    }
+
     .titleLogo {
         font-size: 25px;
     }
 
     .login {
         font-size: 18px;
-        width: 30%;
     }
 }
 
 @media(min-width: 1024px) {
-    .login {
-        width: 13%;
+    .titleLogo {
+        font-size: 35px;
+    }
+
+    .navLinks {
+        font-size: 20px;
     }
 }
