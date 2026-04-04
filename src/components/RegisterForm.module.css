@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 .container {
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    max-width: 700px;
     margin: auto;
     background-color: var(--bg-card);
     padding: 3rem;
@@ -12,7 +12,7 @@
 }
 
 .title {
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 3rem;
     font-weight: bold;
@@ -22,20 +22,18 @@
     display: flex;
     flex-direction: column;
     height: 90%;
-    gap: 2rem;
 }
 
 .infoUser {
     display: flex;
+    flex-direction: column;
 
-    & div {
-        display: flex;
-        flex-direction: column;
-        margin-right: 1rem;
-        width: 100%;
-    }
+}
 
-
+.infoUser div {
+    flex: 1;
+    margin-right: 1rem;
+    width: 100%;
 }
 
 label {
@@ -47,7 +45,7 @@ label {
     background-color: rgba(172, 169, 169, 0.575);
     width: 100%;
     border-radius: 5px;
-    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -55,7 +53,7 @@ input {
     background-color: transparent;
     border: none;
     height: 45px;
-    width: 100%;
+    flex: 1;
     padding-left: 5px;
 }
 
@@ -68,4 +66,18 @@ input {
 
 .btnRegister:hover {
     background-color: var(--bg-category);
+}
+
+@media(min-width: 768px) {
+    .title {
+        font-size: 50px;
+    }
+
+    .infoUser {
+        flex-direction: row;
+    }
+
+    .infoUser div {
+        flex-direction: column;
+    }
 }

@@ -2,26 +2,26 @@
 
 /* Media Query for phone */
 
-.container {
-    width: 100%;
-}
-
 .primarySection {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
-    background-color: var(--bg-card);
     align-items: center;
-    padding: 1rem;
-    gap: 1rem;
+    background-color: var(--bg-card);
+    padding: 2rem;
+    gap: 2rem;
 }
 
 .info {
     display: flex;
-    flex: 2;
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: .5rem;
+
 }
 
 .title {
@@ -36,34 +36,34 @@
     font-size: 50px;
 }
 
-.info p {
-    width: 95%;
-}
-
 .moreCharacters {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 20px 0;
     gap: .5rem;
-    width: 40%;
-    margin-top: 1rem;
+    max-width: 200px;
+    margin-top: 2rem;
     background-color: var(--bg-btn-primary);
     color: white;
-    font-size: 13px;
+    font-size: 15px;
 }
-
 
 .moreCharacters:hover {
     background-color: var(--bg-category);
 }
 
 .primarySection .card {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    max-width: 250px;
     transform: rotate(6deg);
 }
 
-.primarySection .card img {
+.primarySection img {
     width: 100%;
+    max-width: 450px;
     height: 350px;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -72,7 +72,7 @@
 
 .someCharacters {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     justify-items: center;
     gap: 3rem;
     width: 100%;
@@ -82,8 +82,7 @@
 .someCharacters .card {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    width: 310px;
+    width: 350px;
     background-color: var(--bg-card);
     border-radius: 15px;
     box-shadow: 5px 5px 12px rgba(29, 28, 28, 0.664);
@@ -110,22 +109,21 @@
 
 .aboutProject {
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin: 2rem 1rem;
+    margin: 2rem 3rem;
     gap: 2rem;
 }
 
 .aboutProject div {
-    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: start;
     text-align: start;
-    padding: 2rem;
+    padding: 1rem;
     gap: 1rem;
     border-radius: 12px;
     box-shadow: 10px 10px 12px rgba(27, 27, 27, 0.596);
-
 }
 
 .aboutProject h2 {
@@ -138,67 +136,49 @@
 }
 
 .project {
+    flex: 1;
     background-color: var(--bg-card);
 }
 
 .objective {
+    flex: 1;
     color: white;
     background-color: var(--bg-card-secondary);
 }
 
 
-/* Media Query for Desktop*/
+/* Media Query for Tablet
 @media(min-width: 768px) {
-    .moreCharacters {
-        font-size: 16px;
-        width: 30%;
-    }
 
-    .someCharacters {
-        grid-template-columns: repeat(2, 1fr);
-    }
+}*/
 
-}
-
+/* Media Query for PC */
 @media(min-width: 1024px) {
     .primarySection {
         flex-direction: row;
+        text-align: start;
         padding: 3rem;
     }
 
     .info {
-        width: 70%;
+        justify-content: start;
+        align-items: start;
     }
 
     .primarySection .card {
-        width: 30%;
+        max-width: 550px;
     }
 
     .primarySection .card img {
         height: 500px;
     }
 
-    .moreCharacters {
-        font-size: 15px;
-        width: 27%;
-    }
-
     .aboutProject {
         flex-direction: row;
         justify-content: center;
     }
-
-    .aboutProject div {
-        width: 40%;
-    }
-
 }
 
-@media(min-width: 1440px) {
-    .someCharacters {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
-
-
-}
+/* 
+@media(min-width: 1440px) {} 
+*/

@@ -66,30 +66,6 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.42);
 }
 
-/* nav a {
-  color: var(--text-primary);
-}
-
-nav a:hover {
-  color: var(--text-accent);
-  font-weight: bold;
-  display: inline-block;
-  border-bottom: 3px solid var(--text-accent);
-  padding-bottom: 5px;
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-} */
-
-/* .nav-link-active {
-  color: var(--text-accent);
-  font-weight: bold;
-  display: inline-block;
-  border-bottom: 3px solid var(--text-accent);
-  padding-bottom: 5px;
-} */
 
 @theme inline {
   --font-heading: var(--font-sans);
